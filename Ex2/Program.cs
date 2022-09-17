@@ -3,31 +3,31 @@
 
 Console.WriteLine("Введите размер массива");
 int size = Convert.ToInt32(Console.ReadLine());
-int[] numbers = new int[size];
-GetArrayRandomNumbers(numbers);
+int[] array = new int[size];
+GetArrayRandomNumbers(array);
 Console.WriteLine("Массив: ");
-PrintArray(numbers);
+PrintArray(array);
 int sum = 0;
 
-void GetArrayRandomNumbers(int[] numbers)
+void GetArrayRandomNumbers(int[] array)
 {
-    for(int i = 0; i < numbers.Length; i++)
+    for(int i = 0; i < array.Length; i++)
         {
-            numbers[i] = new Random().Next(1,10);
+            array[i] = new Random().Next(1,10);
         }
 }
-void PrintArray(int[] numbers)
+void PrintArray(int[] array)
 {
     Console.Write("[ ");
-    for(int i = 0; i < numbers.Length; i++)
+    for(int i = 0; i < array.Length; i++)
         {
-            Console.Write(numbers[i] + " ");
+            Console.Write(array[i] + " ");
         }
     Console.Write("]");
     Console.WriteLine();
 }
-for (int i = 0; i < numbers.Length; i+=2)
+for (int i = 0; i < array.Length; i+=2)
 {
-    sum = sum + numbers[i];
+    sum = sum + array[i];
 }
-Console.WriteLine($"всего {numbers.Length} чисел, сумма элементов на нечётных позициях = {sum}");
+Console.WriteLine($"всего {array.Length} чисел, сумма элементов на нечётных позициях = {sum}");
