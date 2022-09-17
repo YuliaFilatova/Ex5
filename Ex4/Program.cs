@@ -13,28 +13,26 @@ int[] GetArray(int size)
 }
 int[] Metod(int[] array)
 {
+    int[] newArray = null;
     if (array.Length % 2 == 0)
     {
-        int[] newArray = new int[array.Length / 2];
+        newArray = new int[array.Length / 2];
         for (int i = 0; i < newArray.Length; i++)
         {
             newArray[i] = array[i] * array[array.Length - i - 1];
         }
-        return newArray;
     }
     else
     {
-        int[] newArray = new int[array.Length / 2 + 1];
+        newArray = new int[array.Length / 2 + 1];
         for (int i = 0; i < newArray.Length; i++)
         {
             newArray[i] = array[i] * array[array.Length - i - 1];
-            
         }
-        return newArray;
     }
-    
+    return newArray;
 }
-    
+
 void PrintArray(int[] array)
 {
     for (int i = 0; i < array.Length; i++)
