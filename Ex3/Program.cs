@@ -3,40 +3,41 @@
 
 Console.WriteLine("Введите размер массива");
 int size = Convert.ToInt32(Console.ReadLine());
-double[] numbers = new double[size];
-GetArrayRandomNumbers(numbers);
+double[] array = new double[size];
+GetArrayRandomNumbers(array);
 Console.WriteLine("Массив: ");
-PrintArray(numbers);
+PrintArray(array);
 double min = Int32.MaxValue;
 double max = Int32.MinValue;
 
-void GetArrayRandomNumbers(double[] numbers)
+void GetArrayRandomNumbers(double[] array)
 {
-    for(int i = 0; i < numbers.Length; i++)
+    for(int i = 0; i < array.Length; i++)
         {
-            numbers[i] = Convert.ToDouble(new Random().Next(100,1000)) / 100;
+            array[i] = Convert.ToDouble(new Random().Next(100,1000)) / 100;
         }
 }
-void PrintArray(double[] numbers)
+void PrintArray(double[] array)
 {
     Console.Write("[ ");
-    for(int i = 0; i < numbers.Length; i++)
+    for(int i = 0; i < array.Length; i++)
         {
-            Console.Write(numbers[i] + " ");
+            Console.Write(array[i] + " ");
         }
     Console.Write("]");
     Console.WriteLine();
 }
-for (int i = 0; i < numbers.Length; i++)
+for (int i = 0; i < array.Length; i++)
 {
-    if (numbers[i] > max)
+    if (array[i] > max)
         {
-            max = numbers[i];
+            max = array[i];
         }
-    if (numbers[i] < min)
+    if (array[i] < min)
         {
-            min = numbers[i];
+            min = array[i];
         }
 }
-Console.WriteLine($"всего {numbers.Length} чисел. Максимальное значение = {max}, минимальное значение = {min}");
+
+Console.WriteLine($"всего {array.Length} чисел. Максимальное значение = {max}, минимальное значение = {min}");
 Console.WriteLine($"Разница между максимальным и минимальным значением = {max - min}");
